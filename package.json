@@ -1,0 +1,13 @@
+{
+  "name": "waterline-query-builder",
+  "version": "1.0.0",
+  "description": "Build waterline ORM Queries based on query string params",
+  "main": "index.js",
+  "author": "Vinicius Oliveira",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "4.1.2",
+    "istanbul": "0.4.5",
+    "mocha": "5.2.0"
+  }
+}
