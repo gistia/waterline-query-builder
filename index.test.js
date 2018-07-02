@@ -211,21 +211,21 @@ describe('Query Builder', () => {
     it('selects sort', () => {
       const query = { sort: 'OrderId' };
       const result = QueryBuilder.build(query).sort;
-      const expected = { OrderId:  'ASC' };
+      const expected = [{ OrderId:  'ASC' }];
       expect(result).to.eql(expected);
     });
 
     it('selects descending sort', () => {
       const query = { sort: 'OrderId DESC' };
       const result = QueryBuilder.build(query).sort;
-      const expected = { OrderId: 'DESC' };
+      const expected = [{ OrderId: 'DESC' }];
       expect(result).to.eql(expected);
     });
 
     it('selects multiple sorts', () => {
       const query = { sort: 'OrderId DESC, Something' };
       const result = QueryBuilder.build(query).sort;
-      const expected = { OrderId: 'DESC', Something: 'ASC' };
+      const expected = [{ OrderId: 'DESC' }, { Something: 'ASC' }];
       expect(result).to.eql(expected);
     });
 

@@ -91,13 +91,13 @@ const transformSort = (sort) => {
   if (!sort) {
     return {};
   }
-  return sort.reduce((hash, term) => {
+  return sort.reduce((sorts, term) => {
     const re = regex.exec(term);
     const field = re[1].trim();
     const order = (re[2] || 'ASC').toUpperCase() === 'ASC' ? 'ASC' : 'DESC';
-    hash[field] = order;
-    return hash;
-  }, {});
+    sorts.push({ [field] : order });
+    return sorts;
+  }, []);
 };
 
 const transformToInt = (value) => {
